@@ -19,9 +19,9 @@ export default class Player extends Component {
 
   push = () => {
   firebase.database().ref('CopaAmerica/Equipos/Equipo1/Jugadores/Jugador1').update({
-    goles: "2"
+    goles: "3"
   }).then(() => {
-      this.props.navigation.push('Partidos')
+      this.props.navigation.push('Partido')
   }).catch((error)=>{
       //error callback
       console.log('no funciona')
@@ -33,6 +33,8 @@ export default class Player extends Component {
       <Container>
         <Content>
           <Button onPress={this.push}><Text>Gol</Text></Button>
+          <Button onPress={this.push}><Text>Amarilla</Text></Button>
+          <Button onPress={this.push}><Text>Roja</Text></Button>
         </Content>
       </Container>
     );
